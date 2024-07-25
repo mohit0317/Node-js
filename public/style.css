@@ -1,0 +1,108 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Chat section container */
+.chat_section {
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Ensure messages stack vertically */
+}
+
+/* Brand/header section */
+.brand {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.brand h1 {
+  font-size: 24px;
+}
+
+/* Message area container */
+.message_area {
+  flex: 1; /* Allow the message area to expand to fill remaining space */
+  display: flex;
+  flex-direction: column; /* Ensure messages stack vertically */
+  padding: 20px;
+  max-height: 400px; /* Maximum height for the message area */
+  overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+/* Individual message styles */
+.message {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 50%; /* Each message takes half of the message area width */
+}
+
+.incoming.message {
+  background-color: #f0f0f0;
+  align-self: flex-start; /* Align incoming messages to the left */
+}
+
+.outgoing.message {
+  background-color: #3498db;
+  color: #fff;
+  align-self: flex-end; /* Align outgoing messages to the right */
+}
+
+.message h4 {
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.message p {
+  font-size: 10px;
+}
+
+/* Input area for typing message */
+textarea {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin: 20px 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #42aff7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat_section {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .message {
+    width: 100%; /* Full width for messages on smaller screens */
+  }
+}
